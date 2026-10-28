@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {View, Text, Image, ScrollView} from 'react-native';
+import Movie from './Components/Movie';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+class AllMovies extends React.Component {
+  render() {
+    return (
+        <ScrollView>
+            <View>
+                <Movie title={"Doctor Sleep"} year={2019} icon_name={"skull"} icon_color={"red"} poster={require('./img/doctor-sleep.jpg')} />
+                <Movie title={"Midway"} year={2020} icon_name={"person-rifle"} icon_color={"red"} poster={require('./img/midway.jpg')} />
+                <Movie title={"Spiderman No way home"} year={2021} icon_name={"spider"} icon_color={"red"} poster={"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQydr1AC1-SjCOBs-RKsINtHVRn-2BFyDx2jbvtsY7j77CJKtu0"} />
+            </View>
+        </ScrollView>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default AllMovies;
